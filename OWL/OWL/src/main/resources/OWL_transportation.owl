@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11/"
+     xml:base="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-11="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#belong_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#belong_to">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#belong_to"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#transportation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#belong_to"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#environment"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#work_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#work_in">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#work_in"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#transportation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#work_in"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#environment"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#name"/>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#speed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#speed"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#environment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#environment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#land -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#land">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#plane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#plane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#transportation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#ship -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#ship">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#transportation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sky -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sky">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#train -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#train">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#transportation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#transportation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#transportation"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#G_train -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#G_train">
+        <rdf:type rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#train"/>
+        <untitled-ontology-11:work_in rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#ground"/>
+        <untitled-ontology-11:name>高铁</untitled-ontology-11:name>
+        <untitled-ontology-11:speed rdf:datatype="http://www.w3.org/2001/XMLSchema#int">300</untitled-ontology-11:speed>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#K_train -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#K_train">
+        <rdf:type rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#train"/>
+        <untitled-ontology-11:work_in rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#ground"/>
+        <untitled-ontology-11:name>普快</untitled-ontology-11:name>
+        <untitled-ontology-11:speed rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</untitled-ontology-11:speed>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#airplane -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#airplane">
+        <rdf:type rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#plane"/>
+        <untitled-ontology-11:work_in rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sky_above"/>
+        <untitled-ontology-11:name>飞机</untitled-ontology-11:name>
+        <untitled-ontology-11:speed rdf:datatype="http://www.w3.org/2001/XMLSchema#int">200</untitled-ontology-11:speed>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#boat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#boat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#ship"/>
+        <untitled-ontology-11:work_in rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#water"/>
+        <untitled-ontology-11:name>小船</untitled-ontology-11:name>
+        <untitled-ontology-11:speed rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</untitled-ontology-11:speed>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#ferry -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#ferry">
+        <rdf:type rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#ship"/>
+        <untitled-ontology-11:work_in rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#water"/>
+        <untitled-ontology-11:name>轮渡</untitled-ontology-11:name>
+        <untitled-ontology-11:speed rdf:datatype="http://www.w3.org/2001/XMLSchema#int">25</untitled-ontology-11:speed>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#ground -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#ground">
+        <rdf:type rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#land"/>
+        <untitled-ontology-11:belong_to rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#land"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#helicopter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#helicopter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#plane"/>
+        <untitled-ontology-11:work_in rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sky_above"/>
+        <untitled-ontology-11:name>直升机</untitled-ontology-11:name>
+        <untitled-ontology-11:speed rdf:datatype="http://www.w3.org/2001/XMLSchema#int">250</untitled-ontology-11:speed>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#land -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#land">
+        <rdf:type rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#land"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sea -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sea">
+        <rdf:type rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sea"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sky -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sky">
+        <rdf:type rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sky"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sky_above -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sky_above">
+        <rdf:type rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sky"/>
+        <untitled-ontology-11:belong_to rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sky"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#water -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#water">
+        <rdf:type rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sea"/>
+        <untitled-ontology-11:belong_to rdf:resource="http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#sea"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+

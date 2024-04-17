@@ -1,0 +1,8 @@
+<!ELEMENT courses (course*)>
+<!ELEMENT course (title, instructor, description, duration?)>
+<!ATTLIST course
+    ID CDATA #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT instructor (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT duration (#PCDATA)>

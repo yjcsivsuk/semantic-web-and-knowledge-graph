@@ -1,0 +1,21 @@
+<?xml-stylesheet type="text/xsl" href="course.xsl"?>
+<courses>
+  <course>
+    <title>计算理论基础</title>
+    <instructor>吴老师</instructor>
+    <description>DFA,NFA...</description>
+    <duration>1-9周</duration>
+  </course>
+  <course>
+    <title>随机过程</title>
+    <instructor>严老师</instructor>
+    <description>概率论进阶版</description>
+    <duration>1-13周</duration>
+  </course>
+    <course>
+    <title>最优化方法</title>
+    <instructor>刘老师</instructor>
+    <description>求解最优问题的方法</description>
+    <duration>1-13周</duration>
+  </course>
+</courses>

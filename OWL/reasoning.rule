@@ -1,0 +1,2 @@
+@prefix work: <http://www.semanticweb.org/14737/ontologies/2023/8/untitled-ontology-11#>
+[rule:(?p work:belong_to ?c)(?a work:work_in ?p)->(?a work:work_place_in ?c)]

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>XML and XPath</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+  <script>
+    var xmlContent;
+    // 加载XML文件
+    function loadXML() {
+      var xmlRequest = new XMLHttpRequest();
+      xmlRequest.open('GET', './courseInfo.xml', true);
+      xmlRequest.onreadystatechange = function () {
+        if (xmlRequest.readyState === 4 && xmlRequest.status === 200) {
+          xmlContent = xmlRequest.responseXML;
+        }
+      };
+      xmlRequest.send();
+    }
+    // 执行XPath操作
+    function performXPathOperation(operation) {
+      if (xmlContent) {
+        var xpathInput = document.getElementById('xpath-input').value;
+        try {
+          var result = xmlContent.evaluate(xpathInput, xmlContent, null, XPathResult.ANY_TYPE, null);
+          var output = document.getElementById('xpath-output');
+          output.innerHTML = '';
+          var node;
+          var found = false;
+          while (node = result.iterateNext()) {
+            if (operation === 'validation') {
+              alert("有效的XPath表达式");
+              found = true;
+              break;
+            }
+            output.innerHTML += node.textContent + "<br>";
+            found = true;
+          }
+          if (!found) {
+            if (operation === 'validation') {
+              alert("无效的XPath表达式");
+            } else if (operation === 'search') {
+              alert("未找到匹配结果");
+            }
+          }
+        } catch (error) {
+          if (operation === 'validation') {
+            alert("无效的XPath表达式");
+          } else if (operation === 'search') {
+            alert("无效的XPath表达式");
+          }
+        }
+      } else {
+        alert("请先加载XML文件");
+      }
+    }
+    // 显示XML内容
+    function displayXML(xmlContent) {
+      var output = document.getElementById('xml-output');
+      output.innerHTML = '';
+      var serializer = new XMLSerializer();
+      output.innerHTML = serializer.serializeToString(xmlContent);
+    }
+    // XSL转换XML内容并显示
+    function transformXML() {
+      if (xmlContent) {
+        var xslRequest = new XMLHttpRequest();
+        xslRequest.open('GET', './course.xsl', true);
+        xslRequest.onreadystatechange = function () {
+          if (xslRequest.readyState === 4 && xslRequest.status === 200) {
+            var xslContent = xslRequest.responseXML;
+            var processor = new XSLTProcessor();
+            processor.importStylesheet(xslContent);
+            var transformedXML = processor.transformToDocument(xmlContent);
+            displayXML(transformedXML);
+          }
+        };
+        xslRequest.send();
+      } else {
+        alert("请先加载XML文件");
+      }
+    }
+    // 导出XML内容为CSV
+    function exportToCSV(xmlContent) {
+      var data = [];
+      var header = ['课程', '讲师', '描述', '时长'];
+      data.push(header);
+      var nodes = xmlContent.getElementsByTagName('course');
+      for (var i = 0; i < nodes.length; i++) {
+        var row = [];
+        var node = nodes[i];
+        row.push(node.getElementsByTagName('title')[0].textContent);
+        row.push(node.getElementsByTagName('instructor')[0].textContent);
+        row.push(node.getElementsByTagName('description')[0].textContent);
+        row.push(node.getElementsByTagName('duration')[0].textContent);
+        data.push(row);
+      }
+      var workbook = XLSX.utils.book_new();
+      var worksheet = XLSX.utils.aoa_to_sheet(data);
+      XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet 1');
+      var blob = workbook2blob(workbook);
+      var downloadLink = document.createElement('a');
+      downloadLink.href = URL.createObjectURL(blob);
+      downloadLink.download = 'data.csv';
+      downloadLink.click();
+    }
+    function workbook2blob(workbook) {
+      var wopts = { bookType: 'csv', bookSST: false, type: 'binary' };
+      var wbout = XLSX.write(workbook, wopts);
+      function s2ab(s) {
+        var buf = new ArrayBuffer(s.length);
+        var view = new Uint8Array(buf);
+        for (var i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+        return buf;
+      }
+      return new Blob([s2ab(wbout)], { type: 'application/octet-stream' });
+    }
+    window.addEventListener('load', function () {
+      loadXML();
+    });
+  </script>
+</head>
+
+<body>
+  <!-- XPath操作 -->
+  <input type="text" id="xpath-input" placeholder="请输入XPath表达式">
+  <button onclick="performXPathOperation('validation')">验证XPath</button>
+  <button onclick="performXPathOperation('search')">查询XPath</button>
+  <div id="xpath-output"></div>
+  <!-- 显示XML内容并导出XML为CSV文件 -->
+  <h3>XML内容</h3>
+  <button onclick="transformXML()">显示XML内容</button>
+  <button onclick="exportToCSV(xmlContent)">导出CSV</button>
+  <div id="xml-output"></div>
+</body>
+
+</html>
